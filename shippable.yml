@@ -1,0 +1,33 @@
+language: 
+  - node_js
+
+# Version number
+node_js: 
+  #- ver:
+      #- 0.122
+  #- 0.12
+  #- null
+  
+  #- null
+  #- 0.12
+  - 4.2.1 
+#  - iojs-v1Z      
+ # - iojs-v2   
+  #- iojs-v3 
+  
+#env:
+  #- BUILD_TAG=latest
+  #- BUILD_TAG=prod
+  
+build:
+  #pre_ci:
+   # - echo "this is pr-ci"
+  #pre_ci_boot:     
+    #image_name: drydock/u12nod 
+    #image_tag: $BUILD_TAG
+    #pull: true
+  ci: 
+    - node --version
+    #- sleep 9m
+    
+ 
