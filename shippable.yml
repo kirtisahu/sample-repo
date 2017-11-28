@@ -106,11 +106,3 @@ jobs:
       - TASK:
         - script: echo "done"
 
-  - name: runSh4
-    type: runSh
-    steps:
-      - IN: kubeService2EN
-      - TASK:
-        - script: echo "done"
-
- 
