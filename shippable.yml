@@ -28,7 +28,7 @@ build:
     #pull: true
   ci: 
     - node --version
-    - echo "done"
+    - echo "done."
     #- sleep 9m
     
  
