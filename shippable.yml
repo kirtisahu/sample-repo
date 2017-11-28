@@ -3,32 +3,114 @@ language:
 
 # Version number
 node_js: 
-  #- ver:
-      #- 0.122
-  #- 0.12
-  #- null
-  
-  #- null
-  #- 0.12
   - 4.2.1 
-#  - iojs-v1Z      
- # - iojs-v2   
-  #- iojs-v3 
-  
-#env:
-  #- BUILD_TAG=latest
-  #- BUILD_TAG=prod
-  
+
 build:
-  #pre_ci:
-   # - echo "this is pr-ci"
-  #pre_ci_boot:     
-    #image_name: drydock/u12nod 
-    #image_tag: $BUILD_TAG
-    #pull: true
   ci: 
     - node --version
-    - echo "done"
-    #- sleep 9m
-    
+
+resources:
+  - name: kube-service-cluster-ip
+    type: loadBalancer
+    integration: kubeGen
+    pointer:
+     sourceName: "appclusterip"
+     namespace: shippable
+     method: ClusterIP
+    version:
+     ports:
+       - name: kube-local-port  # Required for multiple ports, must be a DNS_LABEL
+         protocol: TCP  # Kubernetes default: TCP
+         port: 8001     # Required.
+         targetPort: 8002
+
+  - name: kube-service-lb
+    type: loadBalancer
+    integration: kubeGen
+    pointer:
+      sourceName: "apploadbalancer"
+      method: LoadBalancer
+      namespace: shippable
+    version:
+      ports:
+        - name: testport
+          protocol: TCP
+          port: 80
+  
+  - name: kube-service-nodeport
+    type: loadBalancer
+    integration: kubeGen
+    pointer:
+      sourceName: "appnodeport"
+      method: NodePort
+      namespace: shippable
+    version:
+      ports:
+        - name: testport
+          protocol: TCP
+          port: 80
+
+  - name: kube-service-external-name
+    type: loadBalancer
+    integration: kubeGen
+    pointer:
+      sourceName: "appexternalmame"
+      method: ExternalName
+      namespace: shippable
+    version:
+      ports:
+        - name: testport
+          protocol: TCP
+          port: 80
+      externalName: "bharath"
+
+jobs:
+  - name: kubeServiceCIP
+    type: provision
+    steps:
+      - IN: kube-service-cluster-ip
+      
+  - name: kubeServiceLB
+    type: provision
+    steps:
+      - IN: kube-service-lb
+
+  - name: kubeServiceNP
+    type: provision
+    steps:
+      - IN: kube-service-nodeport
+      
+  - name: kubeService2EN
+    type: provision
+    steps:
+      - IN: kube-service-external-name
+
+  - name: runSh1
+    type: runSh
+    steps:
+      - IN: kubeServiceCIP
+      - TASK:
+        - script: echo "done"
+        
+  - name: runSh2
+    type: runSh
+    steps:
+      - IN: kubeServiceLB
+      - TASK:
+        - script: echo "done"
+
+  - name: runSh3
+    type: runSh
+    steps:
+      - IN: kubeServiceNP
+      - TASK:
+        - script: echo "done"
+
+  - name: runSh4
+    type: runSh
+    steps:
+      - IN: kubeService2EN
+      - TASK:
+        - script: echo "done"
+
  
