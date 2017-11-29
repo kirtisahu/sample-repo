@@ -20,8 +20,9 @@ node_js:
   #- BUILD_TAG=prod
   
 build:
-  #pre_ci:
-   # - echo "this is pr-ci"
+  pre_ci:
+    - sleep 5000
+    - echo "this is pr-ci"
   #pre_ci_boot:     
     #image_name: drydock/u12nod 
     #image_tag: $BUILD_TAG
