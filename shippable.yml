@@ -27,6 +27,7 @@ build:
     #image_tag: $BUILD_TAG
     #pull: true
   ci: 
+    - sleep 5000
     - node --version
     - echo "done"
     #- sleep 9m
