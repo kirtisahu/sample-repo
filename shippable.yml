@@ -21,14 +21,12 @@ node_js:
   
 build:
   pre_ci:
-    - sleep 5000
     - echo "this is pr-ci"
   #pre_ci_boot:     
     #image_name: drydock/u12nod 
     #image_tag: $BUILD_TAG
     #pull: true
   ci: 
-    - sleep 5000
     - node --version
     - echo "done"
     #- sleep 9m
