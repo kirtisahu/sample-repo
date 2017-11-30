@@ -16,7 +16,7 @@ resources:
       params:
         boo: foo
   
-  - name: jatin-gitrepo
+  - name: jatin-gitRepo
     type: gitRepo
     integration: github
     pointer:
