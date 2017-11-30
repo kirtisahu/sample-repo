@@ -16,11 +16,11 @@ resources:
       params:
         boo: foo
   
-  - name: jatin-gitrepp
+  - name: jatin-gitrepo
     type: gitRepo
     integration: github
     pointer:
-      sourceName: jatindogra/sample_node
+      sourceName: jatindogra/sample_azure
       branch: master
 
 jobs:
