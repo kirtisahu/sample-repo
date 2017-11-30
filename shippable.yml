@@ -13,7 +13,8 @@ resources:
   - name: jatin-params
     type: params
     version:
-      boo: foo
+      params:
+        boo: foo
 
 jobs:
   - name: runSh-Job
