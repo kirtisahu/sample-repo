@@ -15,12 +15,20 @@ resources:
     version:
       params:
         boo: foo
+  
+  - name: jatin-gitrepp
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: jatindogra/sample_node
+      branch: master
 
 jobs:
   - name: runSh-Job
     type: runSh
     steps:
       - IN: jatin-params
+      - IN: jatin-gitRepo
       - TASK:
         - script: echo "done"
     
