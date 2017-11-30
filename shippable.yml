@@ -19,8 +19,8 @@ resources:
 jobs:
   - name: runSh-Job
     type: runSh
-    IN: jatin-params
     steps:
+      - IN: jatin-params
       - TASK:
         - script: echo "done"
     
