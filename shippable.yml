@@ -9,9 +9,16 @@ build:
   ci: 
     - node --version
 
+resources:
+  - name: jatin-params
+    type: params
+    version:
+      boo: foo
+
 jobs:
   - name: runSh-Job
     type: runSh
+    IN: jatin-params
     steps:
       - TASK:
         - script: echo "done"
