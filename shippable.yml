@@ -26,6 +26,9 @@ resources:
 jobs:
   - name: runSh-Job
     type: runSh
+    runtime:		
+      architecture: x86_64		
+      os: macOS_10.12
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
