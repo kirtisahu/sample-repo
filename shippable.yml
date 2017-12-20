@@ -29,7 +29,7 @@ jobs:
     runtime:
       architecture: x86_64		
       os: Ubuntu_14.04
-      timeoutMinutes: -5
+      timeoutMinutes: 5
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
