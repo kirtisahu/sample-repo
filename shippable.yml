@@ -29,11 +29,11 @@ jobs:
     runtime:
       architecture: x86_64		
       os: Ubuntu_14.04
-      timeoutMinutes: 10
+      timeoutMinutes: 5
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
       - TASK:
-        - script: sleep 20m
+        - script: sleep 6m
     
  
