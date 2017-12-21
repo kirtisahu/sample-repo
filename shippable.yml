@@ -34,6 +34,6 @@ jobs:
       - IN: jatin-params
       - IN: jatin-gitRepo
       - TASK:
-        - script: sleep 11m
+        - script: sleep 6m
     
  
