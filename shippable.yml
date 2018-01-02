@@ -23,14 +23,14 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
  
-  - name: oldGKEInt
+  - name: oldgcl
     type: cliConfig
     integration: jatin-gcl
     pointer:
       sourceName: "cluster-1"
       region: "us-central1-a"	
    
-  - name: gke_cluster
+  - name: gcl_cluster
     type: cluster
     integration: jatin-gcl
     pointer:
@@ -43,8 +43,8 @@ jobs:
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: oldGKEInt
-      - IN: gke_cluster
+      - IN: oldgcl
+      - IN: gcl_cluster
       - TASK:
         - script: echo 'HI'
     
