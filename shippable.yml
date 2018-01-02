@@ -23,6 +23,10 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
 
+  - name: jatin-aws
+    type: integration
+    integration: jatin-aws
+
 jobs:
   - name: runSh-Job
     type: runSh
@@ -33,7 +37,8 @@ jobs:
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
+      - IN: jatin-aws
       - TASK:
-        - script: sleep 6m
+        - script: echo "Hi"
     
  
