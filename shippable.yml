@@ -25,14 +25,14 @@ resources:
  
   - name: oldGKEInt
     type: cliConfig
-    integration: jatin-gke
+    integration: jatin-gcl
     pointer:
       sourceName: "cluster-1"
       region: "us-central1-a"	
    
   - name: gke_cluster
     type: cluster
-    integration: "jatin-gke"
+    integration: jatin-gcl
     pointer:
       sourceName: "cluster-1"
       region: "us-central1-a"
