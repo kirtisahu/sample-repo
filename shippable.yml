@@ -33,7 +33,7 @@ resources:
     type: cluster
     integration: "jatin-gke"
     pointer:
-      sourceName: "cluster-1"
+      sourceName: "cluster"
       region: "us-central1-a"
 
 jobs:
