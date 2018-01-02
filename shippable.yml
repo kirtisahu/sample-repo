@@ -26,6 +26,8 @@ resources:
   - name: jatin-aws
     type: integration
     integration: jatin-aws
+    pointer:
+      region: us-east-1
 
 jobs:
   - name: runSh-Job
