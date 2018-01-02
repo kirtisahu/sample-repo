@@ -22,13 +22,12 @@ resources:
     pointer:
       sourceName: jatindogra/sample_azure
       branch: master
-
-  - name: jatin-aws-1
-    type: cluster
+ 
+  - name: oldAwsInt
+    type: cliConfig
     integration: jatin-aws
     pointer:
       region: us-east-1
-      sourceName: jatin
 
 jobs:
   - name: runSh-Job
@@ -40,7 +39,7 @@ jobs:
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: jatin-aws
+      - IN: oldAwsInt
       - TASK:
         - script: echo "Hi"
     
