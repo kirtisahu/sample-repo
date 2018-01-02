@@ -24,10 +24,11 @@ resources:
       branch: master
 
   - name: jatin-aws
-    type: integration
+    type: cluster
     integration: jatin-aws
     pointer:
       region: us-east-1
+      sourceName: jatin
 
 jobs:
   - name: runSh-Job
