@@ -28,6 +28,13 @@ resources:
     integration: jatin-gke
     pointer:
       region: us-central1-a	
+   
+  - name: gke_cluster
+    type: cluster
+    integration: "jatin-gke"
+    pointer:
+      sourceName: "cluster-1"
+      region: "us-central1-a"
 
 jobs:
   - name: runCLI-Job
@@ -36,6 +43,7 @@ jobs:
       - IN: jatin-params
       - IN: jatin-gitRepo
       - IN: oldGKEInt
+      - IN: gke_cluster
       - TASK:
         - script: echo 'HI'
     
