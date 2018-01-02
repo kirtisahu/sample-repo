@@ -41,6 +41,6 @@ jobs:
       - IN: jatin-gitRepo
       - IN: oldAwsInt
       - TASK:
-        - script: sleep 2m
+        - script: sleep 120
     
  
