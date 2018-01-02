@@ -23,24 +23,20 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
  
-  - name: oldAwsInt
+  - name: oldGKEInt
     type: cliConfig
-    integration: jatin-aws
+    integration: jatin-gke
     pointer:
-      region: us-east-1
+      region: us-central1-a	
 
 jobs:
   - name: runSh-Job
     type: runSh
-    runtime:
-      architecture: x86_64		
-      os: Ubuntu_14.04
-      timeoutMinutes: 1
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: oldAwsInt
+      - IN: oldGKEInt
       - TASK:
-        - script: sleep 120
+        - script: echo 'HI'
     
  
