@@ -23,7 +23,7 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
 
-  - name: jatin-aws
+  - name: jatin-aws-1
     type: cluster
     integration: jatin-aws
     pointer:
