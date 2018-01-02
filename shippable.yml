@@ -43,7 +43,6 @@ jobs:
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: oldgcl
       - IN: gcl_cluster
       - TASK:
         - script: echo 'HI'
