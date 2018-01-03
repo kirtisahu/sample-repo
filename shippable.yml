@@ -26,6 +26,8 @@ resources:
   - name: oldaws
     type: cliConfig
     integration: jatin-aws
+    pointer:
+      region: "us-east-1"
 
 jobs:
   - name: runSh-Job
