@@ -23,9 +23,9 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
  
-  - name: oldpdr
+  - name: oldaws
     type: cliConfig
-    integration: jatin-pdr
+    integration: jatin-aws
 
 jobs:
   - name: runSh-Job
@@ -36,7 +36,7 @@ jobs:
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: oldpdr
+      - IN: oldaws
       - TASK:
         - script: echo 'HI'
     
