@@ -23,28 +23,17 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
  
-  - name: oldgcl
+  - name: oldaz
     type: cliConfig
-    integration: jatin-gcl
-    pointer:
-      sourceName: "cluster-1"
-      region: "us-central1-a"	
-   
-  - name: gcl_cluster
-    type: cluster
-    integration: jatin-gcl
-    pointer:
-      sourceName: "cluster-1"
-      region: "us-central1-a"
+    integration: jatin-az
 
 jobs:
-  - name: runCLI-Job
-    type: runCLI
+  - name: runSh-Job
+    type: runSh
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
-      - IN: oldgcl
-      - IN: gcl_cluster
+      - IN: oldaz
       - TASK:
         - script: echo 'HI'
     
