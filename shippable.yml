@@ -32,6 +32,9 @@ resources:
 jobs:
   - name: runSh-Job
     type: runSh
+    runtime:		
+      architecture: x86_64				
+      os: Ubuntu_16.04
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
