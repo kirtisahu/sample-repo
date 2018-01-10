@@ -41,7 +41,6 @@ jobs:
       - IN: oldaws
       - TASK:
         - script: echo 'HI'
-        - script: sleep 10m
     
     
  
