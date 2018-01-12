@@ -54,18 +54,18 @@ resources:
     type: image
     integration: jatin-docker
     pointer:
-      sourceName: nginx
+      sourceName: jatindogra/nginx
   
   - name: jatin-integration
     type: integration
     integration: jatin-aws
   
-  - name: jatin-email
+  - name: jatin-slack
     type: integration
+    integration: jatin-slacl
     pointer:
-      method: email
       recipients:
-        - "dogra.jatin5@gmail.com"
+        - "#local"
   
   - name: jatin-replicas
     type: replicas
