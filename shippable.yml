@@ -35,6 +35,7 @@ jobs:
     runtime:		
       architecture: x86_64				
       os: Ubuntu_14.04
+      cluster: u14custom
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
