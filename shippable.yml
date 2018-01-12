@@ -28,7 +28,68 @@ resources:
     integration: jatin-aws
     pointer:
       region: "us-east-1"
+      
+  - name: jatin-cluster
+    type: cluster
+    integration: jatin-aws
+    pointer:
+      region: "us-east-1"
+      sourceName: my-cluster
 
+  - name: jatin-dockerOpts
+    type: dockerOptions
+    version:
+      labels:
+        foo: bar
+  
+  - name: jatin-jfrog
+    type: file
+    integration: jatin-jfrog
+    pointer:
+      sourceName: none
+    seed:
+      versionName: none
+ 
+  - name: jatin-image
+    type: image
+    integration: jatin-docker
+    pointer:
+      sourceName: nginx
+  
+  - name: jatin-integration
+    type: integration
+    integration: jatin-aws
+  
+  - name: jatin-email
+    type: integration
+    pointer:
+      method: email
+      recipients:
+        - "dogra.jatin5@gmail.com"
+  
+  - name: jatin-replicas
+    type: replicas
+    version:
+      count: 1
+  
+  - name: jatin-state
+    type: state
+    
+  - name: jatin-timeTrigger
+    type: time
+    seed:
+      interval: "*/2 * * * *"
+  
+  - name: jatin-trigger
+    type: trigger
+    version:
+      counter: 1
+  
+  - name: jatin-version
+    type: version
+    seed:
+      versionName: "0.0.1"
+    
 jobs:
   - name: runSh-Job
     type: runSh
@@ -40,8 +101,15 @@ jobs:
       - IN: jatin-params
       - IN: jatin-gitRepo
       - IN: oldaws
+      - IN: jatin-cluster
+      - IN: jatin-dockerOpts
+      - IN: jatin-jfrog
+      - IN: jatin-image
+      - IN: jatin-integration
+      - IN: jatin-email
+      - IN: jatin-replicas
+      - IN: jatin-state
+      - IN: jatin-trigger
+      - IN: jatin-version
       - TASK:
         - script: echo 'HI'
-    
-    
- 
