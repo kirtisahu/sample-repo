@@ -55,6 +55,8 @@ resources:
     integration: jatin-docker
     pointer:
       sourceName: jatindogra/nginx
+    seed:
+      versionName: master
   
   - name: jatin-integration
     type: integration
@@ -62,7 +64,7 @@ resources:
   
   - name: jatin-slack
     type: integration
-    integration: jatin-slacl
+    integration: jatin-slack
     pointer:
       recipients:
         - "#local"
@@ -106,7 +108,7 @@ jobs:
       - IN: jatin-jfrog
       - IN: jatin-image
       - IN: jatin-integration
-      - IN: jatin-email
+      - IN: jatin-slack
       - IN: jatin-replicas
       - IN: jatin-state
       - IN: jatin-trigger
