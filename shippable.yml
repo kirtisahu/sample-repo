@@ -33,9 +33,9 @@ jobs:
   - name: runSh-Job
     type: runSh
     runtime:		
-      architecture: aarch64		
-      os: Ubuntu_16.04
-      cluster: aarch64cluster
+      architecture: x86_64		
+      os: Ubuntu_14.04
+      cluster: default-cluster
     steps:
       - IN: jatin-params-in
       - IN: jatin-gitRepo
