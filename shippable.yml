@@ -33,7 +33,7 @@ jobs:
   - name: runSh-Job
     type: runSh
     runtime:		
-      nodePool: dynamic-cluster
+      nodePool: ubu14
     steps:
       - IN: jatin-params-in
       - IN: jatin-gitRepo
