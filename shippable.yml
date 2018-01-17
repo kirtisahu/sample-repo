@@ -10,11 +10,11 @@ build:
     - node --version
 
 resources:
-  - name: jatin-params
+  - name: jatin-params-in
     type: params
     version:
       params:
-        boo: foo
+        foo: boo
   
   - name: jatin-gitRepo
     type: gitRepo
@@ -23,11 +23,11 @@ resources:
       sourceName: jatindogra/sample_azure
       branch: master
  
-  - name: oldaws
-    type: cliConfig
-    integration: jatin-aws
-    pointer:
-      region: "us-east-1"
+  - name: jatin-params-out
+    type: params
+    version:
+      params:
+        foo: bar
 
 jobs:
   - name: runSh-Job
@@ -37,11 +37,10 @@ jobs:
       os: Ubuntu_16.04
       cluster: aarch64cluster
     steps:
-      - IN: jatin-params
+      - IN: jatin-params-in
       - IN: jatin-gitRepo
-      - IN: oldaws
       - TASK:
         - script: echo 'HI'
-    
+      - OUT: jatin-params-out
     
  
