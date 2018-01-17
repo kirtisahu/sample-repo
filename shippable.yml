@@ -40,16 +40,6 @@ jobs:
       - OUT: jatin-params-out
       - TASK:
         - script: echo $foo
-   
-  - name: runCLI-Job
-    type: runCLI
-    runtime:
-      nodePool: ubuntucustom
-    steps:
-      - IN: jatin-params-in
-      - OUT: jatin-params-out
-      - TASK:
-        - script: echo $foo
         
   - name: sample-repo_runCI
     type: runCI
