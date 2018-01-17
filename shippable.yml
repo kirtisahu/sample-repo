@@ -32,11 +32,19 @@ resources:
 jobs:
   - name: runSh-Job
     type: runSh
-    runtime:		
+    runtime:
       nodePool: ubuntucustom
     steps:
       - IN: jatin-params-in
-      - IN: jatin-gitRepo
       - OUT: jatin-params-out
       - TASK:
         - script: echo $foo
+   
+  - name: sample-repo_runCI
+    type: runCI
+    runtime:
+      nodePool: ubuntucustom
+    steps:
+      - IN: jatin-params-in
+      - OUT: jatin-params-out
+
