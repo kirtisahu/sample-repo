@@ -32,7 +32,7 @@ resources:
 
 jobs:
   - name: runSh-Job
-    type: runSh
+    type: runCLI
     runtime:
       nodePool: ubuntucustom
     steps:
