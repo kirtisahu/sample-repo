@@ -27,7 +27,7 @@ resources:
     type: params
     version:
       params:
-        foo: bar
+        bar: foo
 
 jobs:
   - name: runSh-Job
@@ -37,7 +37,7 @@ jobs:
     steps:
       - IN: jatin-params-in
       - IN: jatin-gitRepo
-      #- OUT: jatin-params-out
+      - OUT: jatin-params-out
       - TASK:
         - script: echo 'HI'
         - script: printenv
