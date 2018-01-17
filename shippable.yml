@@ -41,7 +41,7 @@ jobs:
       - TASK:
         - script: echo 'HI'
         - script: printenv
-        - script: shipctl get_resource_env jatin-params-in foo
-        - script: shipctl get_resource_env jatin-params-out bar
+        - script: shipctl get_resource_env jatin-params-in
+        - script: shipctl get_resource_env jatin-params-out
     
  
