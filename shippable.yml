@@ -41,7 +41,7 @@ jobs:
       - TASK:
         - script: echo $foo
    
-  - name: runSh-Job
+  - name: runCLI-Job
     type: runCLI
     runtime:
       nodePool: ubuntucustom
