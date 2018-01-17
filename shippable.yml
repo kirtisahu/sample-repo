@@ -33,7 +33,7 @@ jobs:
   - name: runSh-Job
     type: runSh
     runtime:		
-      cluster: default-cluster
+      cluster: dynamic-cluster
     steps:
       - IN: jatin-params-in
       - IN: jatin-gitRepo
