@@ -39,7 +39,6 @@ jobs:
       - IN: jatin-gitRepo
       - OUT: jatin-params-out
       - TASK:
-        - script: echo 'HI'
         - script: printenv
         - script: IN_PARAM="$(shipctl get_resource_env jatin-params-in "JATINPARAMSIN_PARAMS_FOO")"
         - script: echo $IN_PARAM
