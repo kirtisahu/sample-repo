@@ -33,7 +33,7 @@ jobs:
   - name: runSh-Job
     type: runSh
     runtime:		
-      nodePool: ubu14
+      nodePool: ubuntucustom
     steps:
       - IN: jatin-params-in
       - IN: jatin-gitRepo
