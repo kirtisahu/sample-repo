@@ -40,6 +40,4 @@ jobs:
       - OUT: jatin-params-out
       - TASK:
         - script: printenv
-        - script: IN_PARAM="$(shipctl get_resource_env jatin-params-in "PARAMS_FOO")"
-        - script: echo $IN_PARAM
         - script: shipctl get_resource_env jatin-params-in "PARAMS_FOO"
