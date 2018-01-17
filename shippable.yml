@@ -8,6 +8,7 @@ node_js:
 build:
   ci: 
     - node --version
+    - echo $foo
 
 resources:
   - name: jatin-params-in
