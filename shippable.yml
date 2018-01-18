@@ -46,6 +46,7 @@ jobs:
         - script: printenv
         - script: echo $foo
         - script: echo $JATINPARAMSOUT_PARAMS_FOO
+        - script: shipctl get_resource_env jatin-params-out "PARAMS_FOO"
         
   - name: sample-repo_runCI
     type: runCI
