@@ -10,8 +10,7 @@ build:
     - printenv
     - echo $foo
     - echo $JATINPARAMSOUT_PARAMS_FOO
-    - shipctl get_resource_env jatin-params-in "PARAMS_FOO"
-
+    - echo $JATINPARAMSIN_PARAMS_FOO
 resources:
   - name: jatin-params-in
     type: params
