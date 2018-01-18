@@ -40,7 +40,7 @@ jobs:
       - IN: jatin-params-in
       - OUT: jatin-params-out
       - TASK:
-        - printenv
+        - script: printenv
         - script: echo $foo
         
   - name: sample-repo_runCI
