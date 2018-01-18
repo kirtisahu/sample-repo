@@ -8,6 +8,7 @@ node_js:
 
 build:
   ci: 
+    - printenv
     - echo $foo
 
 resources:
@@ -39,6 +40,7 @@ jobs:
       - IN: jatin-params-in
       - OUT: jatin-params-out
       - TASK:
+        - printenv
         - script: echo $foo
         
   - name: sample-repo_runCI
