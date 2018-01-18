@@ -5,7 +5,6 @@ runtime:
 # Version number
 node_js: 
   - 4.2.1 
-
 build:
   ci: 
     - printenv
