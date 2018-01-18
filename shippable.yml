@@ -10,6 +10,8 @@ build:
   ci: 
     - printenv
     - echo $foo
+    - echo $JATINPARAMSOUT_PARAMS_FOO
+    - shipctl get_resource_env jatin-params-in "PARAMS_FOO"
 
 resources:
   - name: jatin-params-in
@@ -40,8 +42,10 @@ jobs:
       - IN: jatin-params-in
       - OUT: jatin-params-out
       - TASK:
+        - script: shipctl get_resource_env jatin-params-in "PARAMS_FOO"
         - script: printenv
         - script: echo $foo
+        - script: echo $JATINPARAMSOUT_PARAMS_FOO
         
   - name: sample-repo_runCI
     type: runCI
