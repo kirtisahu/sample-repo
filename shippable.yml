@@ -1,7 +1,7 @@
 language: 
   - node_js
 runtime:
-  nodePool: ubuntucustom
+  nodePool: jatin-dynamic
 # Version number
 node_js: 
   - 4.2.1 
@@ -35,7 +35,7 @@ jobs:
   - name: runSh-Job
     type: runSh
     runtime:
-      nodePool: ubuntucustom
+      nodePool: jatin-dynamic
     steps:
       - IN: jatin-params-in
       - OUT: jatin-params-out
@@ -49,7 +49,7 @@ jobs:
   - name: sample-repo_runCI
     type: runCI
     runtime:
-      nodePool: ubuntucustom
+      nodePool: jatin-dynamic
     steps:
       - IN: jatin-params-in
       - OUT: jatin-params-out
