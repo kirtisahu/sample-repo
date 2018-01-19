@@ -46,11 +46,3 @@ jobs:
         - script: echo $JATINPARAMSOUT_PARAMS_FOO
         - script: shipctl get_resource_env jatin-params-out "PARAMS_FOO"
         
-  - name: sample-repo_runCI
-    type: runCI
-    runtime:
-      nodePool: jatin-dynamic
-    steps:
-      - IN: jatin-params-in
-      - OUT: jatin-params-out
-
