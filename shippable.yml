@@ -37,3 +37,10 @@ jobs:
     type: deploy
     steps:
       - IN: jatin-manifest
+      
+  - name: jatin-release
+    type: relase
+    bump: major
+    steps:
+      - IN: jatin-manifest
+
