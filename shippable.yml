@@ -19,6 +19,13 @@ resources:
       sourceName: jatindogra/nginx
     seed:
       versionName: master
+  
+  - name: jatin-cluster
+    type: cluster
+    integration: jatin-aws
+    pointer:
+      region: "us-east-1"
+      sourceName: my-cluster
 
 jobs:
   - name: jatin-manifest
