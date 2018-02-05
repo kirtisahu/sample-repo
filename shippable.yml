@@ -39,7 +39,7 @@ jobs:
       - IN: jatin-manifest
       
   - name: jatin-release
-    type: relase
+    type: release
     bump: major
     steps:
       - IN: jatin-manifest
