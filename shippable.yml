@@ -26,3 +26,7 @@ jobs:
     steps:
       - IN: jatin-image
       
+  - name: jatin-deploy
+    type: deploy
+    steps:
+      - IN: jatin-manifest
