@@ -21,3 +21,6 @@ resources:
       versionName: master
 
 jobs:
+  - name: jatin-manifest
+    type: manifest
+    
