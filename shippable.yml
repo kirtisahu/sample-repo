@@ -23,4 +23,6 @@ resources:
 jobs:
   - name: jatin-manifest
     type: manifest
-    
+    steps:
+      - IN: jatin-image
+      
