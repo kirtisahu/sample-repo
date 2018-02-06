@@ -26,11 +26,17 @@ resources:
     pointer:
       region: "us-east-1"
       sourceName: my-cluster
+  
+  - name: jatin-version
+    type: version
+    versionTemplate:
+      versionName: "0.0.1"
 
 jobs:
   - name: jatin-manifest
     type: manifest
     steps:
+      - IN: jatin-version
       - IN: jatin-image
       
   - name: jatin-deploy
@@ -42,5 +48,6 @@ jobs:
     type: release
     bump: major
     steps:
+      - IN: 
       - IN: jatin-manifest
 
