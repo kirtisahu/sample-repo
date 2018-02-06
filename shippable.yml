@@ -36,7 +36,6 @@ jobs:
   - name: jatin-manifest
     type: manifest
     steps:
-      - IN: jatin-version
       - IN: jatin-image
       
   - name: jatin-deploy
@@ -48,6 +47,6 @@ jobs:
     type: release
     bump: major
     steps:
-      - IN: 
+      - IN: jatin-version
       - IN: jatin-manifest
 
